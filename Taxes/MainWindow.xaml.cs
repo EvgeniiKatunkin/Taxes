@@ -31,13 +31,15 @@ namespace Taxes
         {
             try
             {
-                flat1 = new Flat(Convert.ToDouble(heat1.Text), Convert.ToDouble(yardCleaning1.Text), Convert.ToDouble(gas1.Text),
-                    Convert.ToDouble(trash1.Text), Convert.ToDouble(electricity1.Text), Convert.ToInt16(hotWater1.Text),
-                    Convert.ToInt16(coldWater1.Text), Convert.ToDouble(intercom1.Text));
+                flat1 = new Flat(Convert.ToDouble(heat1.Text.Replace('.', ',')), Convert.ToDouble(yardCleaning1.Text.Replace('.', ',')), 
+                    Convert.ToDouble(gas1.Text.Replace('.', ',')), Convert.ToDouble(trash1.Text.Replace('.', ',')), 
+                    Convert.ToDouble(electricity1.Text.Replace('.', ',')), Convert.ToInt16(hotWater1.Text),
+                    Convert.ToInt16(coldWater1.Text), Convert.ToDouble(intercom1.Text.Replace('.', ',')));
 
-                flat2 = new Flat(Convert.ToDouble(heat2.Text), Convert.ToDouble(yardCleaning2.Text), Convert.ToDouble(gas2.Text),
-                        Convert.ToDouble(trash2.Text), Convert.ToDouble(electricity2.Text), Convert.ToInt16(hotWater2.Text),
-                        Convert.ToInt16(coldWater2.Text), Convert.ToDouble(intercom2.Text));
+                flat2 = new Flat(Convert.ToDouble(heat2.Text.Replace('.', ',')), Convert.ToDouble(yardCleaning2.Text.Replace('.', ',')),
+                    Convert.ToDouble(gas2.Text.Replace('.', ',')), Convert.ToDouble(trash2.Text.Replace('.', ',')),
+                    Convert.ToDouble(electricity2.Text.Replace('.', ',')), Convert.ToInt16(hotWater2.Text),
+                    Convert.ToInt16(coldWater2.Text), Convert.ToDouble(intercom2.Text.Replace('.', ',')));
 
                 payForColdWater1.Text = flat1.ColdWaterResult().ToString();
                 payForWaterDisposal1.Text = flat1.WaterDisposalResult().ToString();
@@ -52,8 +54,7 @@ namespace Taxes
 
             catch
             {
-                MessageBox.Show("Введите корректные значения (цифровые), заполните все пустые строки нулями и используйте запятую в дробях " +
-                    "или переключите в региональных стандартах разделитель дроби на точку и используйте её.");
+                MessageBox.Show("Введите корректные значения (цифровые) и заполните все пустые строки нулями.");
             }
         }
     }
