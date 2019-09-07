@@ -20,9 +20,41 @@ namespace Taxes
     /// </summary>
     public partial class MainWindow : Window
     {
+        Flat flat1;
+        Flat flat2;
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                flat1 = new Flat(Convert.ToDouble(heat1.Text), Convert.ToDouble(yardCleaning1.Text), Convert.ToDouble(gas1.Text),
+                    Convert.ToDouble(trash1.Text), Convert.ToDouble(electricity1.Text), Convert.ToInt16(hotWater1.Text),
+                    Convert.ToInt16(coldWater1.Text), Convert.ToDouble(intercom1.Text));
+
+                flat2 = new Flat(Convert.ToDouble(heat2.Text), Convert.ToDouble(yardCleaning2.Text), Convert.ToDouble(gas2.Text),
+                        Convert.ToDouble(trash2.Text), Convert.ToDouble(electricity2.Text), Convert.ToInt16(hotWater2.Text),
+                        Convert.ToInt16(coldWater2.Text), Convert.ToDouble(intercom2.Text));
+
+                payForColdWater1.Text = flat1.ColdWaterResult().ToString();
+                payForWaterDisposal1.Text = flat1.WaterDisposalResult().ToString();
+                result1.Text = flat1.Result().ToString();
+
+                payForColdWater2.Text = flat2.ColdWaterResult().ToString();
+                payForWaterDisposal2.Text = flat2.WaterDisposalResult().ToString();
+                result2.Text = flat2.Result().ToString();
+
+                overallResult.Text = (flat1.Result() + flat2.Result()).ToString();
+            }
+
+            catch
+            {
+                MessageBox.Show("Введите корректные значения (цифровые), заполните все пустые строки нулями и используйте запятую в дробях " +
+                    "или переключите в региональных стандартах разделитель дроби на точку и используйте её.");
+            }
         }
     }
 }
