@@ -31,15 +31,17 @@ namespace Taxes
         {
             try
             {
-                flat1 = new Flat(Convert.ToDouble(heat1.Text.Replace('.', ',')), Convert.ToDouble(yardCleaning1.Text.Replace('.', ',')), 
-                    Convert.ToDouble(gas1.Text.Replace('.', ',')), Convert.ToDouble(trash1.Text.Replace('.', ',')), 
-                    Convert.ToDouble(electricity1.Text.Replace('.', ',')), Convert.ToInt16(hotWater1.Text),
-                    Convert.ToInt16(coldWater1.Text), Convert.ToDouble(intercom1.Text.Replace('.', ',')));
+                flat1 = new Flat(Convert.ToDouble(heat1.Text.Replace('.', ',')), Convert.ToDouble(yardCleaning1.Text.Replace('.', ',')),
+                    Convert.ToDouble(gas1.Text.Replace('.', ',')), Convert.ToDouble(trash1.Text.Replace('.', ',')),
+                    Convert.ToDouble(electricity1.Text.Replace('.', ',')), Convert.ToDouble(intercom1.Text.Replace('.', ',')),
+                    Convert.ToInt16(hotWater1LastMonth.Text), Convert.ToInt16(hotWater1Currently.Text), Convert.ToInt16(coldWater1LastMonth.Text),
+                    Convert.ToInt16(coldWater1Currently.Text));
 
                 flat2 = new Flat(Convert.ToDouble(heat2.Text.Replace('.', ',')), Convert.ToDouble(yardCleaning2.Text.Replace('.', ',')),
                     Convert.ToDouble(gas2.Text.Replace('.', ',')), Convert.ToDouble(trash2.Text.Replace('.', ',')),
-                    Convert.ToDouble(electricity2.Text.Replace('.', ',')), Convert.ToInt16(hotWater2.Text),
-                    Convert.ToInt16(coldWater2.Text), Convert.ToDouble(intercom2.Text.Replace('.', ',')));
+                    Convert.ToDouble(electricity2.Text.Replace('.', ',')), Convert.ToDouble(intercom2.Text.Replace('.', ',')), 
+                    Convert.ToInt16(hotWater2LastMonth.Text), Convert.ToInt16(hotWater2Currently.Text), Convert.ToInt16(coldWater2LastMonth.Text), 
+                    Convert.ToInt16(coldWater2Currently.Text));
 
                 payForColdWater1.Text = flat1.ColdWaterResult().ToString();
                 payForWaterDisposal1.Text = flat1.WaterDisposalResult().ToString();

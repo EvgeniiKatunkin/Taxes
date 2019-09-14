@@ -6,7 +6,7 @@
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:local="clr-namespace:Taxes"
         mc:Ignorable="d"
-        Title="Taxes" Height="521" Width="464" WindowStartupLocation="CenterScreen">
+        Title="Taxes" Height="576" Width="549" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -18,49 +18,57 @@
         <Label x:Name="label1_Copy1" Content="Газ" HorizontalAlignment="Left" Margin="10,111,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <Label x:Name="label1_Copy2" Content="Мусор (ТКО)" HorizontalAlignment="Left" Margin="10,139,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <Label x:Name="label1_Copy3" Content="Электроэнергия" HorizontalAlignment="Left" Margin="10,167,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Label x:Name="label1_Copy4" Content="ГВС в этом месяце" HorizontalAlignment="Left" Margin="11,193,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Label x:Name="label1_Copy5" Content="ХВС в этом месяце" HorizontalAlignment="Left" Margin="10,221,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Label x:Name="label1_Copy6" Content="Домофон" HorizontalAlignment="Left" Margin="10,249,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Label x:Name="label1_Copy7" Content="Заплатить за ХВС" HorizontalAlignment="Left" Margin="10,299,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Label x:Name="label1_Copy8" Content="Заплатить за ВО" HorizontalAlignment="Left" Margin="10,325,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <TextBox x:Name="heat1" HorizontalAlignment="Left" Height="23" Margin="128,57,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82"/>
-        <TextBox x:Name="yardCleaning1" HorizontalAlignment="Left" Height="23" Margin="128,85,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82"/>
-        <TextBox x:Name="gas1" HorizontalAlignment="Left" Height="23" Margin="128,113,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82"/>
-        <TextBox x:Name="trash1" HorizontalAlignment="Left" Height="23" Margin="128,141,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82"/>
-        <TextBox x:Name="electricity1" HorizontalAlignment="Left" Height="23" Margin="128,169,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82"/>
-        <TextBox x:Name="hotWater1" HorizontalAlignment="Left" Height="23" Margin="128,195,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82"/>
-        <TextBox x:Name="coldWater1" HorizontalAlignment="Left" Height="23" Margin="128,223,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82"/>
-        <TextBox x:Name="intercom1" HorizontalAlignment="Left" Height="23" Margin="128,251,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82"/>
-        <TextBox x:Name="payForColdWater1" HorizontalAlignment="Left" Height="23" Margin="128,301,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82" IsReadOnly="True"/>
-        <TextBox x:Name="payForWaterDisposal1" HorizontalAlignment="Left" Height="23" Margin="128,327,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82" IsReadOnly="True"/>
-        <Label x:Name="label1_Copy9" Content="Результат" HorizontalAlignment="Left" Margin="10,368,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <TextBox x:Name="result1" HorizontalAlignment="Left" Height="23" Margin="128,370,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82" IsReadOnly="True"/>
+        <Label x:Name="label1_Copy4" Content="ГВС в прошлом месяце" HorizontalAlignment="Left" Margin="11,228,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label x:Name="label1_Copy5" Content="ХВС в прошлом месяце" HorizontalAlignment="Left" Margin="10,281,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label x:Name="label1_Copy6" Content="Домофон" HorizontalAlignment="Left" Margin="11,193,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label x:Name="label1_Copy7" Content="Заплатить за ХВС" HorizontalAlignment="Left" Margin="11,348,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label x:Name="label1_Copy8" Content="Заплатить за ВО" HorizontalAlignment="Left" Margin="11,374,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBox x:Name="heat1" HorizontalAlignment="Left" Height="23" Margin="158,57,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82"/>
+        <TextBox x:Name="yardCleaning1" HorizontalAlignment="Left" Height="23" Margin="158,85,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82"/>
+        <TextBox x:Name="gas1" HorizontalAlignment="Left" Height="23" Margin="158,113,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82"/>
+        <TextBox x:Name="trash1" HorizontalAlignment="Left" Height="23" Margin="158,141,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82"/>
+        <TextBox x:Name="electricity1" HorizontalAlignment="Left" Height="23" Margin="158,169,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82"/>
+        <TextBox x:Name="hotWater1LastMonth" HorizontalAlignment="Left" Height="23" Margin="158,230,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82"/>
+        <TextBox x:Name="coldWater1LastMonth" HorizontalAlignment="Left" Height="23" Margin="158,283,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82"/>
+        <TextBox x:Name="intercom1" HorizontalAlignment="Left" Height="23" Margin="158,195,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82"/>
+        <TextBox x:Name="payForColdWater1" HorizontalAlignment="Left" Height="23" Margin="158,350,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82" IsReadOnly="True"/>
+        <TextBox x:Name="payForWaterDisposal1" HorizontalAlignment="Left" Height="23" Margin="158,376,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82" IsReadOnly="True"/>
+        <Label x:Name="label1_Copy9" Content="Результат" HorizontalAlignment="Left" Margin="11,433,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBox x:Name="result1" HorizontalAlignment="Left" Height="23" Margin="158,435,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82" IsReadOnly="True"/>
         <Label x:Name="label_Copy" Content="Вторая квартира" HorizontalAlignment="Left" Margin="15,11,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Grid.Column="1"/>
         <Label x:Name="label1_Copy10" Content="Отопление + ГВС" HorizontalAlignment="Left" Margin="15,56,0,0" VerticalAlignment="Top" Grid.Column="1" FontWeight="Bold"/>
         <Label x:Name="label1_Copy11" Content="Уборка двора" HorizontalAlignment="Left" Margin="15,84,0,0" VerticalAlignment="Top" Grid.Column="1" FontWeight="Bold"/>
         <Label x:Name="label1_Copy12" Content="Газ" HorizontalAlignment="Left" Margin="15,112,0,0" VerticalAlignment="Top" Grid.Column="1" FontWeight="Bold"/>
         <Label x:Name="label1_Copy13" Content="Мусор (ТКО)" HorizontalAlignment="Left" Margin="15,140,0,0" VerticalAlignment="Top" Grid.Column="1" FontWeight="Bold"/>
-        <Label x:Name="label1_Copy14" Content="Электроэнергия" HorizontalAlignment="Left" Margin="15,168,0,0" VerticalAlignment="Top" Grid.Column="1" FontWeight="Bold"/>
-        <Label x:Name="label1_Copy15" Content="ГВС в этом месяце" HorizontalAlignment="Left" Margin="15,194,0,0" VerticalAlignment="Top" Grid.Column="1" FontWeight="Bold"/>
-        <Label x:Name="label1_Copy16" Content="ХВС в этом месяце" HorizontalAlignment="Left" Margin="15,222,0,0" VerticalAlignment="Top" Grid.Column="1" FontWeight="Bold"/>
-        <Label x:Name="label1_Copy17" Content="Домофон" HorizontalAlignment="Left" Margin="15,250,0,0" VerticalAlignment="Top" Grid.Column="1" FontWeight="Bold"/>
-        <Label x:Name="label1_Copy18" Content="Заплатить за ХВС" HorizontalAlignment="Left" Margin="15,300,0,0" VerticalAlignment="Top" Grid.Column="1" FontWeight="Bold"/>
-        <Label x:Name="label1_Copy19" Content="Заплатить за ВО" HorizontalAlignment="Left" Margin="15,326,0,0" VerticalAlignment="Top" Grid.Column="1" FontWeight="Bold"/>
-        <TextBox x:Name="heat2" HorizontalAlignment="Left" Height="23" Margin="133,58,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82" Grid.Column="1"/>
-        <TextBox x:Name="yardCleaning2" HorizontalAlignment="Left" Height="23" Margin="133,86,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82" Grid.Column="1"/>
-        <TextBox x:Name="gas2" HorizontalAlignment="Left" Height="23" Margin="133,114,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82" Grid.Column="1"/>
-        <TextBox x:Name="trash2" HorizontalAlignment="Left" Height="23" Margin="133,142,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82" Grid.Column="1"/>
-        <TextBox x:Name="electricity2" HorizontalAlignment="Left" Height="23" Margin="133,170,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82" Grid.Column="1"/>
-        <TextBox x:Name="hotWater2" HorizontalAlignment="Left" Height="23" Margin="133,196,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82" Grid.Column="1"/>
-        <TextBox x:Name="coldWater2" HorizontalAlignment="Left" Height="23" Margin="133,224,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82" Grid.Column="1"/>
-        <TextBox x:Name="intercom2" HorizontalAlignment="Left" Height="23" Margin="133,252,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82" Grid.Column="1"/>
-        <TextBox x:Name="payForColdWater2" HorizontalAlignment="Left" Height="23" Margin="133,302,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82" Grid.Column="1" IsReadOnly="True"/>
-        <TextBox x:Name="payForWaterDisposal2" HorizontalAlignment="Left" Height="23" Margin="133,328,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82" Grid.Column="1" IsReadOnly="True"/>
-        <Label x:Name="label1_Copy20" Content="Результат" HorizontalAlignment="Left" Margin="15,369,0,0" VerticalAlignment="Top" Grid.Column="1" FontWeight="Bold"/>
-        <TextBox x:Name="result2" HorizontalAlignment="Left" Height="23" Margin="133,371,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82" Grid.Column="1" IsReadOnly="True"/>
-        <Label x:Name="label2" Content="Общий результат" HorizontalAlignment="Left" Margin="112,419,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <TextBox x:Name="overallResult" HorizontalAlignment="Left" Height="23" Margin="15,421,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82" Grid.Column="1" IsReadOnly="True"/>
-        <Button x:Name="button" Content="Считай!" HorizontalAlignment="Left" Margin="112,450,0,0" VerticalAlignment="Top" Width="210" Grid.ColumnSpan="2" Click="Button_Click" FontWeight="Bold"/>
+        <Label x:Name="label1_Copy14" Content="Электроэнергия" HorizontalAlignment="Left" Margin="15,167,0,0" VerticalAlignment="Top" Grid.Column="1" FontWeight="Bold"/>
+        <Label x:Name="label1_Copy15" Content="ГВС в прошлом месяце" HorizontalAlignment="Left" Margin="15,229,0,0" VerticalAlignment="Top" Grid.Column="1" FontWeight="Bold"/>
+        <Label x:Name="label1_Copy16" Content="ХВС в прошлом месяце" HorizontalAlignment="Left" Margin="15,282,0,0" VerticalAlignment="Top" Grid.Column="1" FontWeight="Bold"/>
+        <Label x:Name="label1_Copy17" Content="Домофон" HorizontalAlignment="Left" Margin="15,193,0,0" VerticalAlignment="Top" FontWeight="Bold" Grid.Column="1"/>
+        <Label x:Name="label1_Copy18" Content="Заплатить за ХВС" HorizontalAlignment="Left" Margin="15,348,0,0" VerticalAlignment="Top" Grid.Column="1" FontWeight="Bold"/>
+        <Label x:Name="label1_Copy19" Content="Заплатить за ВО" HorizontalAlignment="Left" Margin="15,374,0,0" VerticalAlignment="Top" Grid.Column="1" FontWeight="Bold"/>
+        <TextBox x:Name="heat2" HorizontalAlignment="Left" Height="23" Margin="168,57,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82" Grid.Column="1"/>
+        <TextBox x:Name="yardCleaning2" HorizontalAlignment="Left" Height="23" Margin="168,85,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82" Grid.Column="1"/>
+        <TextBox x:Name="gas2" HorizontalAlignment="Left" Height="23" Margin="168,113,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82" Grid.Column="1"/>
+        <TextBox x:Name="trash2" HorizontalAlignment="Left" Height="23" Margin="168,141,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82" Grid.Column="1"/>
+        <TextBox x:Name="electricity2" HorizontalAlignment="Left" Height="23" Margin="168,169,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82" Grid.Column="1"/>
+        <TextBox x:Name="hotWater2LastMonth" HorizontalAlignment="Left" Height="23" Margin="168,230,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82" Grid.Column="1"/>
+        <TextBox x:Name="coldWater2LastMonth" HorizontalAlignment="Left" Height="23" Margin="168,283,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82" Grid.Column="1"/>
+        <TextBox x:Name="intercom2" HorizontalAlignment="Left" Height="23" Margin="168,197,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82" Grid.Column="1"/>
+        <TextBox x:Name="payForColdWater2" HorizontalAlignment="Left" Height="23" Margin="168,350,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82" Grid.Column="1" IsReadOnly="True"/>
+        <TextBox x:Name="payForWaterDisposal2" HorizontalAlignment="Left" Height="23" Margin="168,376,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82" Grid.Column="1" IsReadOnly="True"/>
+        <Label x:Name="label1_Copy20" Content="Результат" HorizontalAlignment="Left" Margin="15,433,0,0" VerticalAlignment="Top" Grid.Column="1" FontWeight="Bold"/>
+        <TextBox x:Name="result2" HorizontalAlignment="Left" Height="23" Margin="168,435,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82" Grid.Column="1" IsReadOnly="True"/>
+        <Label x:Name="label2" Content="Общий результат" HorizontalAlignment="Left" Margin="147,483,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBox x:Name="overallResult" HorizontalAlignment="Left" Height="23" Margin="21,485,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82" Grid.Column="1" IsReadOnly="True"/>
+        <Button x:Name="button" Content="Считай!" HorizontalAlignment="Left" Margin="163,514,0,0" VerticalAlignment="Top" Width="210" Grid.ColumnSpan="2" Click="Button_Click" FontWeight="Bold"/>
+        <Label x:Name="label1_Copy21" Content="ГВС в этом месяце" HorizontalAlignment="Left" Margin="11,253,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBox x:Name="hotWater1Currently" HorizontalAlignment="Left" Height="23" Margin="158,255,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82"/>
+        <Label x:Name="label1_Copy22" Content="ГВС в этом месяце" HorizontalAlignment="Left" Margin="15,254,0,0" VerticalAlignment="Top" Grid.Column="1" FontWeight="Bold"/>
+        <TextBox x:Name="hotWater2Currently" HorizontalAlignment="Left" Height="23" Margin="168,255,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82" Grid.Column="1"/>
+        <Label x:Name="label1_Copy23" Content="ХВС в этом месяце" HorizontalAlignment="Left" Margin="10,310,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBox x:Name="coldWater1Currently" HorizontalAlignment="Left" Height="23" Margin="158,312,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82"/>
+        <Label x:Name="label1_Copy24" Content="ХВС в этом месяце" HorizontalAlignment="Left" Margin="15,311,0,0" VerticalAlignment="Top" Grid.Column="1" FontWeight="Bold"/>
+        <TextBox x:Name="coldWater2Currently" HorizontalAlignment="Left" Height="23" Margin="168,312,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82" Grid.Column="1"/>
 
     </Grid>
 </Window>

@@ -19,15 +19,17 @@ namespace Taxes
         double intercom;
 
         public Flat(double Heat, double YardCleaning, double Gas, double Trash, 
-            double Electricity, int HotWater, int ColdWater, double Intercom)
+            double Electricity, double Intercom, int HotWaterLastMonth, int HotWaterCurrently, 
+            int ColdWaterLastMonth, int ColdWaterCurrently)
         {
             heat = Heat;
             yardCleaning = YardCleaning;
             gas = Gas;
             trash = Trash;
             electricity = Electricity;
-            water = HotWater + ColdWater;
             intercom = Intercom;
+            water = (HotWaterCurrently - HotWaterLastMonth) + 
+                (ColdWaterCurrently - ColdWaterLastMonth);
         }
 
         public double ColdWaterResult()
@@ -42,8 +44,8 @@ namespace Taxes
 
         public double Result()
         {
-            return heat + yardCleaning + gas + trash + electricity + 
-                ColdWaterResult() + WaterDisposalResult() + intercom;
+            return heat + yardCleaning + gas + trash + electricity + intercom + 
+                ColdWaterResult() + WaterDisposalResult();
         }
     }
 }
