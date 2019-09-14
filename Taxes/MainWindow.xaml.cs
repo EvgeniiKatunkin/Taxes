@@ -61,22 +61,35 @@ namespace Taxes
                 MessageBox.Show("Введите корректные значения (цифровые) и заполните все пустые строки нулями.");
             }
 
-            StreamWriter lastMonthValues = new StreamWriter("lastMonthValues.txt");
-            lastMonthValues.WriteLine(hotWater1Currently.Text);
-            lastMonthValues.WriteLine(coldWater1Currently.Text);
-            lastMonthValues.WriteLine(hotWater2Currently.Text);
-            lastMonthValues.WriteLine(coldWater2Currently.Text);
-            lastMonthValues.Close();
+            SetLastMonthValues();
         }
 
         void GetLastMonthValues()
         {
-            StreamReader lastMonthValues = new StreamReader("lastMonthValues.txt");
-            hotWater1LastMonth.Text = lastMonthValues.ReadLine();
-            coldWater1LastMonth.Text = lastMonthValues.ReadLine();
-            hotWater2LastMonth.Text = lastMonthValues.ReadLine();
-            coldWater2LastMonth.Text = lastMonthValues.ReadLine();
-            lastMonthValues.Close();
+            try
+            {
+                StreamReader lastMonthValuesReader = new StreamReader("lastMonthValues.txt");
+                hotWater1LastMonth.Text = lastMonthValuesReader.ReadLine();
+                coldWater1LastMonth.Text = lastMonthValuesReader.ReadLine();
+                hotWater2LastMonth.Text = lastMonthValuesReader.ReadLine();
+                coldWater2LastMonth.Text = lastMonthValuesReader.ReadLine();
+                lastMonthValuesReader.Close();
+            }
+
+            catch
+            {
+                SetLastMonthValues();
+            }
+        }
+
+        void SetLastMonthValues()
+        {
+            StreamWriter lastMonthValuesWriter = new StreamWriter("lastMonthValues.txt");
+            lastMonthValuesWriter.WriteLine(hotWater1Currently.Text);
+            lastMonthValuesWriter.WriteLine(coldWater1Currently.Text);
+            lastMonthValuesWriter.WriteLine(hotWater2Currently.Text);
+            lastMonthValuesWriter.WriteLine(coldWater2Currently.Text);
+            lastMonthValuesWriter.Close();
         }
     }
 }
