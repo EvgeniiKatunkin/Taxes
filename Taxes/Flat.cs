@@ -16,8 +16,8 @@ namespace Taxes
         double gas;
         double trash;
         double electricity;
-        int water;
         double intercom;
+        int water;
 
         public Flat(double Heat, double YardCleaning, double Gas, double Trash, 
             double Electricity, double Intercom, int HotWaterLastMonth, int HotWaterCurrently, 
