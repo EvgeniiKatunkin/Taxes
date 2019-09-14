@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace Taxes
 {
@@ -25,6 +26,7 @@ namespace Taxes
         public MainWindow()
         {
             InitializeComponent();
+            GetLastMonthValues();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -58,6 +60,23 @@ namespace Taxes
             {
                 MessageBox.Show("Введите корректные значения (цифровые) и заполните все пустые строки нулями.");
             }
+
+            StreamWriter lastMonthValues = new StreamWriter("lastMonthValues.txt");
+            lastMonthValues.WriteLine(hotWater1Currently.Text);
+            lastMonthValues.WriteLine(coldWater1Currently.Text);
+            lastMonthValues.WriteLine(hotWater2Currently.Text);
+            lastMonthValues.WriteLine(coldWater2Currently.Text);
+            lastMonthValues.Close();
+        }
+
+        void GetLastMonthValues()
+        {
+            StreamReader lastMonthValues = new StreamReader("lastMonthValues.txt");
+            hotWater1LastMonth.Text = lastMonthValues.ReadLine();
+            coldWater1LastMonth.Text = lastMonthValues.ReadLine();
+            hotWater2LastMonth.Text = lastMonthValues.ReadLine();
+            coldWater2LastMonth.Text = lastMonthValues.ReadLine();
+            lastMonthValues.Close();
         }
     }
 }
