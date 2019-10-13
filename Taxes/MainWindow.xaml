@@ -6,7 +6,7 @@
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:local="clr-namespace:Taxes"
         mc:Ignorable="d"
-        Title="Taxes" Height="576" Width="549" WindowStartupLocation="CenterScreen">
+        Title="Taxes" Height="586" Width="549" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -28,8 +28,8 @@
         <TextBox x:Name="gas1" HorizontalAlignment="Left" Height="23" Margin="158,113,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82"/>
         <TextBox x:Name="trash1" HorizontalAlignment="Left" Height="23" Margin="158,141,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82"/>
         <TextBox x:Name="electricity1" HorizontalAlignment="Left" Height="23" Margin="158,169,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82"/>
-        <TextBox x:Name="hotWater1LastMonth" HorizontalAlignment="Left" Height="23" Margin="158,230,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82" IsReadOnly="True"/>
-        <TextBox x:Name="coldWater1LastMonth" HorizontalAlignment="Left" Height="23" Margin="158,283,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82" IsReadOnly="True"/>
+        <TextBox x:Name="hotWater1LastMonth" HorizontalAlignment="Left" Height="23" Margin="158,230,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82"/>
+        <TextBox x:Name="coldWater1LastMonth" HorizontalAlignment="Left" Height="23" Margin="158,283,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82"/>
         <TextBox x:Name="intercom1" HorizontalAlignment="Left" Height="23" Margin="158,195,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82"/>
         <TextBox x:Name="payForColdWater1" HorizontalAlignment="Left" Height="23" Margin="158,350,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82" IsReadOnly="True"/>
         <TextBox x:Name="payForWaterDisposal1" HorizontalAlignment="Left" Height="23" Margin="158,376,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82" IsReadOnly="True"/>
@@ -51,8 +51,8 @@
         <TextBox x:Name="gas2" HorizontalAlignment="Left" Height="23" Margin="168,113,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82" Grid.Column="1"/>
         <TextBox x:Name="trash2" HorizontalAlignment="Left" Height="23" Margin="168,141,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82" Grid.Column="1"/>
         <TextBox x:Name="electricity2" HorizontalAlignment="Left" Height="23" Margin="168,169,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82" Grid.Column="1"/>
-        <TextBox x:Name="hotWater2LastMonth" HorizontalAlignment="Left" Height="23" Margin="168,230,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82" Grid.Column="1" IsReadOnly="True"/>
-        <TextBox x:Name="coldWater2LastMonth" HorizontalAlignment="Left" Height="23" Margin="168,283,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82" Grid.Column="1" IsReadOnly="True"/>
+        <TextBox x:Name="hotWater2LastMonth" HorizontalAlignment="Left" Height="23" Margin="168,230,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82" Grid.Column="1"/>
+        <TextBox x:Name="coldWater2LastMonth" HorizontalAlignment="Left" Height="23" Margin="168,283,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82" Grid.Column="1"/>
         <TextBox x:Name="intercom2" HorizontalAlignment="Left" Height="23" Margin="168,197,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82" Grid.Column="1"/>
         <TextBox x:Name="payForColdWater2" HorizontalAlignment="Left" Height="23" Margin="168,350,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82" Grid.Column="1" IsReadOnly="True"/>
         <TextBox x:Name="payForWaterDisposal2" HorizontalAlignment="Left" Height="23" Margin="168,376,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82" Grid.Column="1" IsReadOnly="True"/>
@@ -69,6 +69,7 @@
         <TextBox x:Name="coldWater1Currently" HorizontalAlignment="Left" Height="23" Margin="158,312,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82"/>
         <Label x:Name="label1_Copy24" Content="ХВС в этом месяце" HorizontalAlignment="Left" Margin="15,311,0,0" VerticalAlignment="Top" Grid.Column="1" FontWeight="Bold"/>
         <TextBox x:Name="coldWater2Currently" HorizontalAlignment="Left" Height="23" Margin="168,312,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82" Grid.Column="1"/>
+        <Button x:Name="dropButton" Content="Сброс" Grid.Column="1" HorizontalAlignment="Left" Margin="168,514,0,0" VerticalAlignment="Top" Width="75" Click="dropButton_Click"/>
 
     </Grid>
 </Window>

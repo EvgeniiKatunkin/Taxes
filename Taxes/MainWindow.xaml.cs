@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Taxes
 {
@@ -31,8 +32,11 @@ namespace Taxes
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
+            SetLastMonthValues();
+        }
+
+        void initializationOfTheFlats()
+        {
                 flat1 = new Flat(heat1.Text.Replace('.', ','), yardCleaning1.Text.Replace('.', ','),
                     gas1.Text.Replace('.', ','), trash1.Text.Replace('.', ','),
                     electricity1.Text.Replace('.', ','), intercom1.Text.Replace('.', ','),
@@ -41,10 +45,15 @@ namespace Taxes
 
                 flat2 = new Flat(heat2.Text.Replace('.', ','), yardCleaning2.Text.Replace('.', ','),
                     gas2.Text.Replace('.', ','), trash2.Text.Replace('.', ','),
-                    electricity2.Text.Replace('.', ','), intercom2.Text.Replace('.', ','), 
-                    hotWater2LastMonth.Text, hotWater2Currently.Text, coldWater2LastMonth.Text, 
+                    electricity2.Text.Replace('.', ','), intercom2.Text.Replace('.', ','),
+                    hotWater2LastMonth.Text, hotWater2Currently.Text, coldWater2LastMonth.Text,
                     coldWater2Currently.Text);
+        }
 
+        void results()
+        {
+            try
+            {
                 payForColdWater1.Text = flat1.ColdWaterResult().ToString();
                 payForWaterDisposal1.Text = flat1.WaterDisposalResult().ToString();
                 result1.Text = flat1.Result().ToString();
@@ -60,24 +69,25 @@ namespace Taxes
             {
                 MessageBox.Show("Введите корректные значения (цифровые) и заполните все пустые строки нулями.");
             }
-
-            SetLastMonthValues();
         }
 
         void GetLastMonthValues()
         {
             try
             {
-                StreamReader lastMonthValuesReader = new StreamReader("lastMonthValues.txt");
-                hotWater1LastMonth.Text = lastMonthValuesReader.ReadLine();
-                coldWater1LastMonth.Text = lastMonthValuesReader.ReadLine();
-                hotWater2LastMonth.Text = lastMonthValuesReader.ReadLine();
-                coldWater2LastMonth.Text = lastMonthValuesReader.ReadLine();
-                lastMonthValuesReader.Close();
-                hotWater1Currently.Text = hotWater1LastMonth.Text;
-                coldWater1Currently.Text = coldWater1LastMonth.Text;
-                hotWater2Currently.Text = hotWater2LastMonth.Text;
-                coldWater2Currently.Text = coldWater2LastMonth.Text;
+                using(Stream inputForFlat1 = File.OpenRead("flat1.dat"))
+                {
+                    BinaryFormatter formatter1 = new BinaryFormatter();
+                    flat1 = (Flat)formatter1.Deserialize(inputForFlat1);
+                }
+
+                using (Stream inputForFlat2 = File.OpenRead("flat2.dat"))
+                {
+                    BinaryFormatter formatter2 = new BinaryFormatter();
+                    flat2 = (Flat)formatter2.Deserialize(inputForFlat2);
+                }
+
+                updateForm();
             }
 
             catch
@@ -88,12 +98,51 @@ namespace Taxes
 
         void SetLastMonthValues()
         {
-            StreamWriter lastMonthValuesWriter = new StreamWriter("lastMonthValues.txt");
-            lastMonthValuesWriter.WriteLine(hotWater1Currently.Text);
-            lastMonthValuesWriter.WriteLine(coldWater1Currently.Text);
-            lastMonthValuesWriter.WriteLine(hotWater2Currently.Text);
-            lastMonthValuesWriter.WriteLine(coldWater2Currently.Text);
-            lastMonthValuesWriter.Close();
+            initializationOfTheFlats();
+            results();
+            using (Stream outputForFlat1 = File.Create("flat1.dat"))
+            {
+                BinaryFormatter formatter1 = new BinaryFormatter();
+                formatter1.Serialize(outputForFlat1, flat1);
+            }
+
+            using (Stream outputForFlat2 = File.Create("flat2.dat"))
+            {
+                BinaryFormatter formatter2 = new BinaryFormatter();
+                formatter2.Serialize(outputForFlat2, flat2);
+            }
+        }
+
+        void updateForm()
+        {
+            heat1.Text = flat1.heat;
+            yardCleaning1.Text = flat1.yardCleaning;
+            gas1.Text = flat1.gas;
+            trash1.Text = flat1.trash;
+            electricity1.Text = flat1.electricity;
+            intercom1.Text = flat1.intercom;
+            hotWater1LastMonth.Text = flat1.hotWaterLastMonth;
+            hotWater1Currently.Text = flat1.hotWaterCurrently;
+            coldWater1LastMonth.Text = flat1.coldWaterLastMonth;
+            coldWater1Currently.Text = flat1.coldWaterCurrently;
+
+            heat2.Text = flat2.heat;
+            yardCleaning2.Text = flat2.yardCleaning;
+            gas2.Text = flat2.gas;
+            trash2.Text = flat2.trash;
+            electricity2.Text = flat2.electricity;
+            intercom2.Text = flat2.intercom;
+            hotWater2LastMonth.Text = flat2.hotWaterLastMonth;
+            hotWater2Currently.Text = flat2.hotWaterCurrently;
+            coldWater2LastMonth.Text = flat2.coldWaterLastMonth;
+            coldWater2Currently.Text = flat2.coldWaterCurrently;
+
+            results();
+        }
+
+        private void dropButton_Click(object sender, RoutedEventArgs e)
+        {
+            updateForm();
         }
     }
 }
