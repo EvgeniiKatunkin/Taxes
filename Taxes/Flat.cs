@@ -19,18 +19,18 @@ namespace Taxes
         double intercom;
         int water;
 
-        public Flat(double Heat, double YardCleaning, double Gas, double Trash, 
-            double Electricity, double Intercom, int HotWaterLastMonth, int HotWaterCurrently, 
-            int ColdWaterLastMonth, int ColdWaterCurrently)
+        public Flat(string Heat, string YardCleaning, string Gas, string Trash, 
+            string Electricity, string Intercom, string HotWaterLastMonth, string HotWaterCurrently, 
+            string ColdWaterLastMonth, string ColdWaterCurrently)
         {
-            heat = Heat;
-            yardCleaning = YardCleaning;
-            gas = Gas;
-            trash = Trash;
-            electricity = Electricity;
-            intercom = Intercom;
-            water = (HotWaterCurrently - HotWaterLastMonth) + 
-                (ColdWaterCurrently - ColdWaterLastMonth);
+            heat = Convert.ToDouble(Heat);
+            yardCleaning = Convert.ToDouble(YardCleaning);
+            gas = Convert.ToDouble(Gas);
+            trash = Convert.ToDouble(Trash);
+            electricity = Convert.ToDouble(Electricity);
+            intercom = Convert.ToDouble(Intercom);
+            water = (Convert.ToInt16(HotWaterCurrently) - Convert.ToInt16(HotWaterLastMonth)) + 
+                (Convert.ToInt16(ColdWaterCurrently) - Convert.ToInt16(ColdWaterLastMonth));
         }
 
         public double ColdWaterResult()

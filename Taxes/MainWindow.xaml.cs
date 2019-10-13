@@ -33,17 +33,17 @@ namespace Taxes
         {
             try
             {
-                flat1 = new Flat(Convert.ToDouble(heat1.Text.Replace('.', ',')), Convert.ToDouble(yardCleaning1.Text.Replace('.', ',')),
-                    Convert.ToDouble(gas1.Text.Replace('.', ',')), Convert.ToDouble(trash1.Text.Replace('.', ',')),
-                    Convert.ToDouble(electricity1.Text.Replace('.', ',')), Convert.ToDouble(intercom1.Text.Replace('.', ',')),
-                    Convert.ToInt16(hotWater1LastMonth.Text), Convert.ToInt16(hotWater1Currently.Text), Convert.ToInt16(coldWater1LastMonth.Text),
-                    Convert.ToInt16(coldWater1Currently.Text));
+                flat1 = new Flat(heat1.Text.Replace('.', ','), yardCleaning1.Text.Replace('.', ','),
+                    gas1.Text.Replace('.', ','), trash1.Text.Replace('.', ','),
+                    electricity1.Text.Replace('.', ','), intercom1.Text.Replace('.', ','),
+                    hotWater1LastMonth.Text, hotWater1Currently.Text, coldWater1LastMonth.Text,
+                    coldWater1Currently.Text);
 
-                flat2 = new Flat(Convert.ToDouble(heat2.Text.Replace('.', ',')), Convert.ToDouble(yardCleaning2.Text.Replace('.', ',')),
-                    Convert.ToDouble(gas2.Text.Replace('.', ',')), Convert.ToDouble(trash2.Text.Replace('.', ',')),
-                    Convert.ToDouble(electricity2.Text.Replace('.', ',')), Convert.ToDouble(intercom2.Text.Replace('.', ',')), 
-                    Convert.ToInt16(hotWater2LastMonth.Text), Convert.ToInt16(hotWater2Currently.Text), Convert.ToInt16(coldWater2LastMonth.Text), 
-                    Convert.ToInt16(coldWater2Currently.Text));
+                flat2 = new Flat(heat2.Text.Replace('.', ','), yardCleaning2.Text.Replace('.', ','),
+                    gas2.Text.Replace('.', ','), trash2.Text.Replace('.', ','),
+                    electricity2.Text.Replace('.', ','), intercom2.Text.Replace('.', ','), 
+                    hotWater2LastMonth.Text, hotWater2Currently.Text, coldWater2LastMonth.Text, 
+                    coldWater2Currently.Text);
 
                 payForColdWater1.Text = flat1.ColdWaterResult().ToString();
                 payForWaterDisposal1.Text = flat1.WaterDisposalResult().ToString();
@@ -74,6 +74,10 @@ namespace Taxes
                 hotWater2LastMonth.Text = lastMonthValuesReader.ReadLine();
                 coldWater2LastMonth.Text = lastMonthValuesReader.ReadLine();
                 lastMonthValuesReader.Close();
+                hotWater1Currently.Text = hotWater1LastMonth.Text;
+                coldWater1Currently.Text = coldWater1LastMonth.Text;
+                hotWater2Currently.Text = hotWater2LastMonth.Text;
+                coldWater2Currently.Text = coldWater2LastMonth.Text;
             }
 
             catch
